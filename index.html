@@ -7,26 +7,28 @@
 		<link rel="stylesheet" type="text/css" href="css/onlyConnect.css" />
 
 		<script type="text/javascript" src="js/lib/jquery.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.color.js"></script>
+		<script type="text/javascript" src="js/ecma_extended.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/puzzles.js"></script>
 
 	</head>
 	<body>
 		<h1>Only Connect Wall</h1>
-		<div id="wallSelector">
+		<div id="wallSelector" class="hidden">
 			<h2>pick Boards</h2>
-			<div class="lion"></div>
-			<div class="water"></div>
+			<a class="lion" href="?wall=lion">Lion</a>
+			<a class="water" href="?wall=water">Water</a>
 		</div>
 
-		<div id="wall">
+		<div id="wall" class="hidden">
 			<div class="Timeleft"></div>
-			<div class="puzzle">
-				<div class="option">Hello Dolly</div>
-			</div>
+			<ul>
+				<li>Hello Dolly</li>
+			</ul>
 		</div>
 
-		<div class="results"></div>
+		<div id="results" class="hidden"></div>
 
 		<script>
 			$(document).ready(OnlyConnect.init());

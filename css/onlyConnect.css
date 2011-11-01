@@ -1,0 +1,66 @@
+/* 
+    Document   : onlyConnect
+    Created on : Oct 27, 2011, 7:28:58 AM
+    Author     : IanWallis
+    Description:
+        
+*/
+
+.hidden {
+	display: none !important;
+}
+.spacer {
+	height: 0 !important;
+	float: none !important;
+	clear: both;
+}
+
+#wall {
+}
+#wall ul {
+	width: 725px;
+	height: 410px;
+	list-style: none;
+}
+#wall ul li {
+	float: left;
+	width: 145px;
+	height: 82px;
+	margin: 10px;
+	color: darkblue;
+	background-color: cyan;
+}
+#wall ul li div {
+	position: relative;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 145px;
+	height: 62px;
+	padding: 10px;
+}
+
+#wall ul li.selected {
+	
+}
+#wall ul li.wrong {
+	background-color: #cc0033;
+	color: white;
+}
+#wall ul li.group0 {
+	background-color: darkblue;
+	color: white;
+}
+#wall ul li.group1 {
+	background-color: darkgreen;
+	color: white;
+}
+#wall ul li.group2 {
+	background-color: darkred;
+	color: white;
+}
+#wall ul li.group3 {
+	background-color: royalblue;
+	color: white;
+}
+
