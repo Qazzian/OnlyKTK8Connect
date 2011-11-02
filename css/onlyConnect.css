@@ -16,11 +16,13 @@
 }
 
 #wall {
+	width: 750px;
 }
 #wall ul {
 	width: 725px;
 	height: 410px;
 	list-style: none;
+	clear: both;
 }
 #wall ul li {
 	float: left;
@@ -64,3 +66,25 @@
 	color: white;
 }
 
+#wall ul li.timeout {
+	background-color: darkgrey;
+	color: gray;
+}
+
+.Timeleft {
+	display: block;
+	width: 200px;
+	height: 10px;
+	border: 1px solid blue;
+	background-color: darkBlue;
+	padding: 2px;
+	float: right;
+	margin: 5px;
+	margin-right: 60px;
+}
+.Timeleft .TimeUsed {
+	display: block;
+	height: 100%;
+	width: 50%;
+	background-color: royalblue;
+}
