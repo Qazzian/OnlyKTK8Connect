@@ -97,6 +97,7 @@ OnlyConnect = {
 	looseLife: function(){
 		var oc = OnlyConnect;
 		if (oc.groups.length == 2){
+			$('#life'+oc.lives).addClass('lost');
 			oc.lives--;
 		}
 		if (oc.lives <= 0) {
@@ -152,6 +153,10 @@ OnlyConnect = {
 	checkTime: function(){
 		var oc = OnlyConnect,
 			timeUsed = Date.now() - oc.startTime;
+		
+		if (!oc.playing) {
+			return;
+		}
 
 		if (timeUsed >= oc.TIME_LIMIT) {
 			oc.endGame(false);

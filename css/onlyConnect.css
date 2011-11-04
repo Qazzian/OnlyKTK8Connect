@@ -15,6 +15,28 @@
 	clear: both;
 }
 
+#wallSelector {
+	margin: 20px auto;
+	width: 387px;
+	height: 148px;
+	display: table-cell;
+}
+#wallSelector a{
+	width: 108px;
+	height: 72px;
+	float: left;
+	background-color: darkblue;
+	color: white;
+}
+#wallSelector a.lion{
+	background-image: url('../img/lion.jpg');
+}
+#wallSelector a.water{
+	background-image: url('../img/water.jpg');
+}
+
+/*108 x 72*/
+
 #wall {
 	width: 750px;
 }
@@ -31,6 +53,7 @@
 	margin: 10px;
 	color: darkblue;
 	background-color: cyan;
+	cursor: pointer;
 }
 #wall ul li div {
 	position: relative;
@@ -69,6 +92,25 @@
 #wall ul li.timeout {
 	background-color: darkgrey;
 	color: gray;
+}
+
+.lives {
+	width: 100px;
+	height: 10px;
+	float: left;
+	margin: 5px;
+	margin-left: 77px;
+}
+.lives span{
+	display: block;
+	float: left;
+	width: 10px;
+	height: 100%;
+	margin: 10px;
+	background-color: darkblue;
+}
+.lives span.lost{
+	background-color: grey;
 }
 
 .Timeleft {
