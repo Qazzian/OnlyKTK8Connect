@@ -169,6 +169,7 @@ OnlyConnect = {
 	},
 
 	endGame: function(isWin) {
+		OnlyConnect.playing = false;
 		if (isWin) {
 			$('#wall ul li').not('.set').each(OnlyConnect.selectWallBlock);
 			alert("you completed the wall.");

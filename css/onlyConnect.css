@@ -107,10 +107,10 @@
 	width: 10px;
 	height: 100%;
 	margin: 10px;
-	background-color: darkblue;
+	background-color: green;
 }
 .lives span.lost{
-	background-color: grey;
+	background-color: red;
 }
 
 .Timeleft {
