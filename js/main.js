@@ -28,11 +28,9 @@ OnlyConnect = {
 
 	selectWall: function(event){
 		event.preventDefault();
-		console.log("Selected wall: ", this, event);
 		var selectedWall = this.className;
 		var selector = $('#wallSelector').addClass('hidden');
 		var wallData = OnlyConnect.puzzle.getUnsortedWall(selectedWall);
-		console.log(wallData);
 		OnlyConnect.buildWall(wallData);
 		// TODO start the timer
 		OnlyConnect.lives = OnlyConnect.LIFE_LIMIT;
@@ -44,14 +42,11 @@ OnlyConnect = {
 	buildWall: function(wallData){
 		var wallList = $('#wall ul');
 		wallList.empty();
-		console.log('Empty the wall. Wall data: '+wallData.length);
 		for (var i=0, l=wallData.length; i<l; i++) {
 			wallList.append('<li class="wallOption" id="wo_'+i+'"><div>'+wallData[i]+'</div></li>');
 		}
-		console.log('Added the list elements.'+wallList.children.length);
 		wallList.append('<li class="spacer" />');
 		$('#wall').removeClass('hidden');
-		console.log('Reveal wall');
 	},
 	
 	onBlockClick: function(event){
@@ -182,6 +177,7 @@ OnlyConnect = {
 
 	endGame: function(isWin) {
 		OnlyConnect.playing = false;
+		OnlyConnect.clearSelectedBlocks();
 		if (isWin) {
 			$('#wall ul li').not('.set').each(OnlyConnect.selectWallBlock);
 			alert("you completed the wall.");
