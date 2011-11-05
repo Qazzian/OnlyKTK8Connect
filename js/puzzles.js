@@ -73,16 +73,24 @@ Puzzles = {
 
 	data: {
 		water: [
-			['a', 'b', 'c', 'd'],
-			[1, 2, 3, 4],
-			['alpha', 'beta', 'gamma', 'delta'],
-			['red', 'green', 'blue', 'yellow']
+			['rope', 'ship', 'shark', 'broomstick'],
+			['shotgun', 'forced', 'military', 'mass'],
+			[
+				'Let us talk of nothing henceforth but equality',
+				'Your poverty is my pride',
+				'My soul is of equal Importance with the soul of a Princess',
+				'Before I knew what the matter was, it looked like love'
+			 ],
+			['Reader, I married him',
+		'Conventionality is not morality',
+		'I scorn your idea of love',
+		'You are formed for labour, not for love',]
 		],
 		lion: [
-			['a', 'b', 'c', 'd'],
-			[1, 2, 3, 4],
-			['alpha', 'beta', 'gamma', 'delta'],
-			['red', 'green', 'blue', 'yellow']
+			['eeyore', 'amoeba', 'mould', 'blonde'],
+			['exciting package',  'worm', 'waah in your mouth', "I'm getting wet" ],
+			['piglet', 'pooh', 'tigger', 'owl'],
+			['double', 'courage', 'treat', 'uncle']
 		]
 	}
 
@@ -105,7 +113,7 @@ Puzzles = {
 		Reader, I married him
 		conventionality is not morality
 		I scorn your idea of love
-		I am no bird
+		you are formed for labour not for love
 
 	 */
 }
