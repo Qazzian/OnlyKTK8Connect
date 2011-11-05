@@ -76,7 +76,7 @@ Puzzles = {
 
 	data: {
 		water: [
-			['rope', 'ship', 'shark', 'broomstick'],
+			['suit', 'ship', 'shark', 'broomstick'],
 			['shotgun', 'forced', 'military', 'mass'],
 			[
 				'Let us talk of nothing henceforth but equality',
