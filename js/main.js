@@ -18,7 +18,7 @@ OnlyConnect = {
 		btns.each(function(btn){
 			$(this).bind('click',OnlyConnect.selectWall);
 		});
-		$('.wallOption').live('click', OnlyConnect.selectWallBlock);
+		$('.wallOption').live('click', OnlyConnect.onBlockClick);
 		$('.revealAnswers').addClass('hidden');
 	},
 
@@ -42,29 +42,41 @@ OnlyConnect = {
 	},
 
 	buildWall: function(wallData){
-		var wallList = $('#wall>ul');
+		var wallList = $('#wall ul');
 		wallList.empty();
+		console.log('Empty the wall. Wall data: '+wallData.length);
 		for (var i=0, l=wallData.length; i<l; i++) {
 			wallList.append('<li class="wallOption" id="wo_'+i+'"><div>'+wallData[i]+'</div></li>');
 		}
+		console.log('Added the list elements.'+wallList.children.length);
 		wallList.append('<li class="spacer" />');
 		$('#wall').removeClass('hidden');
+		console.log('Reveal wall');
 	},
-
-	selectWallBlock: function(event){
+	
+	onBlockClick: function(event){
 		var $this = $(this),
 			oc = OnlyConnect;
 		if ($this.hasClass('timeout') || $this.hasClass('set')) {
 			return;
 		}
-		var value = oc.getBlockValue($this);
-		if ($this.hasClass('selected')) {
+		else {
+			oc.selectWallBlock($this)
+		}
+		
+	},
+
+	selectWallBlock: function($block){
+		$block = $block || $(this);
+		var oc = OnlyConnect,
+			value = oc.getBlockValue($block);
+		if ($block.hasClass('selected')) {
 			var index = oc.selectedBlocks.indexOf(value);
 			oc.selectedBlocks.splice(index, 1);
-			$this.removeClass('selected').removeClass('group'+oc.groups.length);
+			$block.removeClass('selected').removeClass('group'+oc.groups.length);
 		}
 		else {
-			$this.addClass('selected').addClass('group'+oc.groups.length);
+			$block.addClass('selected').addClass('group'+oc.groups.length);
 			oc.selectedBlocks.push(value);
 			oc.checkForGroup(oc.selectedBlocks);
 		}
@@ -84,7 +96,7 @@ OnlyConnect = {
 			oc.storeSavedBlocks(group);
 			oc.selectedBlocks = [];
 			// TODO if group 3 then do last group automatically and end the game
-			if (oc.groups.length == 3) {
+			if (oc.groups.length == 3 && oc.playing == true) {
 				oc.endGame(true);
 			}
 		}
@@ -146,13 +158,13 @@ OnlyConnect = {
 	},
 
 	startTimer: function(){
-		OnlyConnect.startTime = Date.now();
+		OnlyConnect.startTime = new Date();
 		OnlyConnect.checkTime();
 	},
 
 	checkTime: function(){
 		var oc = OnlyConnect,
-			timeUsed = Date.now() - oc.startTime;
+			timeUsed = new Date() - oc.startTime;
 		
 		if (!oc.playing) {
 			return;
@@ -183,7 +195,40 @@ OnlyConnect = {
 	},
 
 	revealAnswers: function(){
-
+		var oc = OnlyConnect,
+			wallData = oc.puzzle.getActiveWall(),
+			wall = $('#wall li');
+		
+		$('.timeout').removeClass('timeout');
+		
+		for(var i=0,l=wallData.length; i<l; i++) {
+			var firstVal = wallData[i][0],
+				firstBlock = oc.findBlock(firstVal);
+				
+			if (firstBlock.hasClass('set')) {continue;}
+			else {oc.selectGroup(wallData[i]);}
+			
+		}
+		
+	},
+	
+	findBlock: function(value){
+		var wall = $('#wall li');
+		for(var i=0,l=wall.length; i<l; i++) {
+			var currValue = OnlyConnect.getBlockValue($(wall[i]));
+			if (value == currValue) {
+				return $(wall[i]);
+			}
+		}
+		return null;
+	},
+	
+	selectGroup: function(groupValues) {
+		var wall = $('#wall li');
+		for(var i=0,l=groupValues.length; i<l; i++) {
+			var $block = OnlyConnect.findBlock(groupValues[i]);
+			OnlyConnect.selectWallBlock($block);
+		}
 	}
 	
 }
