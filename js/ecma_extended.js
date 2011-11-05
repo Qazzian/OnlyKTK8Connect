@@ -52,6 +52,17 @@ Array.prototype.shuffle = function(){
 	return this;
 
 }
+if (typeof Array.prototype.indexOf !== 'function') {
+	Array.prototype.indexOf = function(test){
+		for (var i=0, l=this.length; i<l; i++) {
+			if (this[i] === test) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+}
 
 /**
  * log()

@@ -34,6 +34,9 @@ Puzzle.prototype = {
 		out.shuffle();
 		return out;
 	},
+  getActiveWall: function(){
+    return this.data[this.activeWall];
+  },
 	// Takes an array of 4 options. Returns true if it is a valid group
 	isGroup: function(options) {
 		if (!options.length || options.length !== 4) {
