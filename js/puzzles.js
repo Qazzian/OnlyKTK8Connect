@@ -84,10 +84,12 @@ Puzzles = {
 				'My soul is of equal Importance with the soul of a Princess',
 				'Before I knew what the matter was, it looked like love'
 			 ],
-			['Reader, I married him',
-		'Conventionality is not morality',
-		'I scorn your idea of love',
-		'You are formed for labour, not for love',]
+			[
+				'Reader, I married him',
+			   'Conventionality is not morality',
+			   'I scorn your idea of love',
+			   'You are formed for labour, not for love',
+			]
 		],
 		lion: [
 			['eeyore', 'amoeba', 'mould', 'blonde'],
@@ -96,27 +98,4 @@ Puzzles = {
 			['double', 'courage', 'treat', 'uncle']
 		]
 	}
-
-	/*
-		rope
-		hurdle
-		shark
-		broomstick
-
-		shotgun
-		forced
-		military
-		mass
-
-		Let us talk of nothing henceforth but equality
-		your poverty is my pride
-		my Soul is of equal Importance with the Soul of a Princess
-		before I knew what the Matter was, it look’d like Love
-
-		Reader, I married him
-		conventionality is not morality
-		I scorn your idea of love
-		you are formed for labour not for love
-
-	 */
 }
