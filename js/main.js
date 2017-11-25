@@ -179,7 +179,9 @@ OnlyConnect = {
 		OnlyConnect.playing = false;
 		OnlyConnect.clearSelectedBlocks();
 		if (isWin) {
-			$('#wall ul li').not('.set').each(OnlyConnect.selectWallBlock);
+			$('#wall ul li').not('.set').each(function(index, block){
+				OnlyConnect.selectWallBlock($(block));
+			});
 			alert("you completed the wall.");
 		}
 		else {

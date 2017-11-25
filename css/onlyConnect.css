@@ -25,14 +25,24 @@
 	width: 108px;
 	height: 72px;
 	float: left;
+	margin: 1ex;
 	background-color: darkblue;
 	color: white;
 }
 #wallSelector a.lion{
 	background-image: url('../img/lion.jpg');
 }
+#wallSelector a.lion:active,
+#wallSelector a.lion:focus {
+	background-image: url('../img/Lion_selected.jpg');
+}
 #wallSelector a.water{
-	background-image: url('../img/water.jpg');
+	background-image: url('../img/Water.jpg');
+}
+#wallSelector a.water:active,
+#wallSelector a.water:focus {
+	background-image: url('../img/Water_selected.jpg');
+}
 }
 
 /*108 x 72*/
